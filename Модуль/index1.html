@@ -1,0 +1,172 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Модуль завдання 3</title>
+</head>
+<body>
+    <h1></h1>
+    <div>
+        <table class="table table-hover">
+            <thead>
+                <th>Адреса</th>
+                <th>Фірма Власник</th>
+                <th>Запаси бензину</th>
+                <th>Ціна</th>
+            </thead>
+            <tbody id="render_place">
+
+            </tbody>
+        </table>
+
+        <hr>
+        <button class="btn btn-warning" id="actionButton">
+            
+        </button>
+     </div>
+
+    <script>
+        
+    
+
+        const AZS = [
+            {
+                id: 1,
+                address: 'Ужгород',
+                firma : 'ОККО',
+                zapasi_benzina_A_80: 500 ,
+                zapasi_benzina_A_92:300,
+                zapasi_benzina_A_95:1500 ,
+                cina_benzina_A_80:21 ,
+                cina_benzina_A_92: 24 ,
+                cina_benzina_A_95:27,
+                
+                
+
+            },
+            {
+                id:2 ,
+                address: 'Свалява',
+                firma : 'SHELL',
+                zapasi_benzina_A_80: 80 ,
+                zapasi_benzina_A_92:3000,
+                zapasi_benzina_A_95:5200 ,
+                cina_benzina_A_80:22 ,
+                cina_benzina_A_92: 23 ,
+                cina_benzina_A_95:27,
+            },
+            {
+                id: 3,
+                address: ',Барвінок',
+                firma : 'ОККО',
+                zapasi_benzina_A_80: 450 ,
+                zapasi_benzina_A_92:3100,
+                zapasi_benzina_A_95:11500 ,
+                cina_benzina_A_80:21 ,
+                cina_benzina_A_92: 24 ,
+                cina_benzina_A_95:29,
+            },
+            {
+                id: 4,
+                address: 'Чоп',
+                firma : 'ОККО',
+                zapasi_benzina_A_80: 5 ,
+                zapasi_benzina_A_92:20000,
+                zapasi_benzina_A_95:80000 ,
+                cina_benzina_A_80:28 ,
+                cina_benzina_A_92: 25 ,
+                cina_benzina_A_95:26,
+            },
+             {
+                id: 5,
+                address: 'Невицьке',
+                firma : 'УкрНафта',
+                zapasi_benzina_A_80: 0 ,
+                zapasi_benzina_A_92:800,
+                zapasi_benzina_A_95:1700 ,
+                cina_benzina_A_80:19 ,
+                cina_benzina_A_92: 23 ,
+                cina_benzina_A_95:25,
+            },
+             {
+                id: 6,
+                address: 'Середнє',
+                firma : 'WOG',
+                zapasi_benzina_A_80: 500 ,
+                zapasi_benzina_A_92:300,
+                zapasi_benzina_A_95:1500 ,
+                cina_benzina_A_80:21 ,
+                cina_benzina_A_92: 25 ,
+                cina_benzina_A_95:28,
+            },
+             {
+                id: 7,
+                address: 'Ужгород',
+                firma : 'Маркет',
+                zapasi_benzina_A_80: 300 ,
+                zapasi_benzina_A_92:800,
+                zapasi_benzina_A_95:7770 ,
+                cina_benzina_A_80:15 ,
+                cina_benzina_A_92: 21 ,
+                cina_benzina_A_95:35,
+            },
+             {
+                id: 8,
+                address: 'Ужгород',
+                firma : 'ANP',
+                zapasi_benzina_A_80: 500 ,
+                zapasi_benzina_A_92:300,
+                zapasi_benzina_A_95:1500 ,
+                cina_benzina_A_80:23 ,
+                cina_benzina_A_92: 24 ,
+                cina_benzina_A_95:29,
+            },
+             {
+                id: 9,
+                address: 'Мукачеве',
+                firma : 'GLUSCO',
+                zapasi_benzina_A_80: 0 ,
+                zapasi_benzina_A_92:700,
+                zapasi_benzina_A_95:7000 ,
+                cina_benzina_A_80:23 ,
+                cina_benzina_A_92: 25 ,
+                cina_benzina_A_95:28,
+            },
+             {
+                id: 10,
+                address: 'Ужгород',
+                firma : 'БРСМ',
+                zapasi_benzina_A_80: 500 ,
+                zapasi_benzina_A_92:300,
+                zapasi_benzina_A_95:1500 ,
+                cina_benzina_A_80:21 ,
+                cina_benzina_A_92: 23 ,
+                cina_benzina_A_95:25,
+            },
+             
+        ];
+        multi_1  =  document.getElementById('address').value;
+        multi_2  =  document.getElementById('firma').value;
+        multi_3  =  document.getElementById('zapasi_benzina_A_80').value;
+        multi_4  =  document.getElementById('zapasi_benzina_A_92').value;
+        multi_5  =  document.getElementById('zapasi_benzina_A_95').value;
+        multi_6  =  document.getElementById('cina_benzina_A_80').value;
+        multi_7  =  document.getElementById('cina_benzina_A_92').value;
+        multi_8  =  document.getElementById('cina_benzina_A_95').value;
+
+
+        function task() {
+            
+            
+
+            AZS.forEach(item => {
+                console.log(`, Номер: ${item.id},  Адреса: ${item.address}, запаси бензину а 80: ${item.zapasi_benzina_A_80},запаси бензину а 92: ${item.zapasi_benzina_A_92},запаси бензину а 95: ${item.zapasi_benzina_A_95},ціна бензину а 80: ${item.cina_benzina_A_80},ціна бензину а 92: ${item.cina_benzina_A_92},ціна бензину а 95: ${item.cina_benzina_A_95}, );
+            });
+        }
+
+        welcome();
+        task();
+    </script>
+</body>
+</html>

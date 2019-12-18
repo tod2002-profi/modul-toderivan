@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Модуль</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+     
+<label> Гривні<input type="number" name="grn" id="grn" placeholder="Введіть кількість Гривень"></label>
+
+<label>Ліра <input type="number" name="lira" id="lira" placeholder="Введіть кількість Лір"></label>
+<button id="knopka">конветрувати гривні в ліри</button>
+<button id="knopka2">конветрувати ліри в грнивні</button>
+<script>
+    function lira(x) {
+        return x * 0.398;
+    }
+    function grn(x) {
+        return x * 3.98;
+    }
+
+    let button1 = document.getElementById("knopka");
+    button1.onclick = function (x) {
+        let minutes = parseFloat(document.getElementById("grn").value);
+        document.getElementById("lira").value = lira(minutes);
+
+
+    }
+    let button = document.getElementById("knopka2");
+    button.onclick = function (x) {
+        let minutes = parseFloat(document.getElementById("lira").value);
+        document.getElementById("grn").value = grn(minutes);
+
+
+    }
+
+</script>
+            
+        </script>
+    </body>
+</html>
